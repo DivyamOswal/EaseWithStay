@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import offers from "../../assets/Home/offers/offers.js";
-import Title from "../Tilte.jsx";
+import Title from "../Title.jsx";
 
 const Offers = () => {
   return (

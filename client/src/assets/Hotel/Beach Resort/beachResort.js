@@ -19,8 +19,6 @@ export const topDeals = [
     oldPrice: "21,000",
     newPrice: "15,750",
     image: tajLandsImg,
-    description:
-      "Located in Bandra, Taj Lands End offers stunning Arabian Sea views and luxurious modern interiors. Enjoy fine dining, a serene spa, and easy access to Mumbai’s bustling nightlife and shopping districts.",
   },
   {
     id: 2,
@@ -33,8 +31,6 @@ export const topDeals = [
     oldPrice: "26,000",
     newPrice: "21,650",
     image: leelaPalaceImg,
-    description:
-      "An icon of grandeur in the heart of Delhi, The Leela Palace combines traditional Indian artistry with world-class comfort. Guests can indulge in award-winning dining and a luxurious wellness spa experience.",
   },
   {
     id: 3,
@@ -44,11 +40,9 @@ export const topDeals = [
     rating: 8.9,
     reviews: 300,
     nights: 3,
-    oldPrice: "155,000",
-    newPrice: "125,000",
+    oldPrice: "15,5000",
+    newPrice: "12,5000",
     image: amanbaghImg,
-    description:
-      "Nestled in the Aravalli Hills, Amanbagh is a serene retreat offering royal Rajasthani architecture and unmatched tranquility. It’s the perfect escape for travelers seeking privacy, wellness, and nature.",
   },
   {
     id: 4,
@@ -61,8 +55,6 @@ export const topDeals = [
     oldPrice: "21,000",
     newPrice: "15,750",
     image: anandaImg,
-    description:
-      "Perched in the Himalayan foothills, Ananda is India’s premier destination spa. Experience rejuvenating Ayurveda, yoga, and meditation therapies amidst breathtaking mountain views.",
   },
   {
     id: 5,
@@ -75,8 +67,6 @@ export const topDeals = [
     oldPrice: "36,000",
     newPrice: "30,499",
     image: oberoiImg,
-    description:
-      "Just 600 meters from the Taj Mahal, The Oberoi Amarvilas offers luxury inspired by Mughal grandeur. Every room provides stunning views of the Taj, complemented by impeccable Oberoi hospitality.",
   },
   {
     id: 6,
@@ -89,8 +79,6 @@ export const topDeals = [
     oldPrice: "21,000",
     newPrice: "15,750",
     image: rafflesImg,
-    description:
-      "Set in the Pink City, Raffles Jaipur blends timeless elegance with contemporary luxury. Guests can relax in palatial suites, savor royal Rajasthani cuisine, and enjoy a calm oasis away from the city buzz.",
   },
   {
     id: 7,
@@ -103,9 +91,7 @@ export const topDeals = [
     oldPrice: "32,000",
     newPrice: "26,800",
     image: tajPalaceImg,
-    description:
-      "Overlooking the Gateway of India, the Taj Mahal Palace is an iconic symbol of Mumbai’s heritage. Known for its elegant architecture, legendary service, and fine dining, it’s a favorite among global travelers.",
   },
 ];
 
-export default topDeals;
+export default topDeals

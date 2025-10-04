@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../components/Home/Hero'
 import Offers from '../components/Home/Offers'
 import ExploreIndia from '../components/Home/ExploreIndia'
@@ -13,6 +13,11 @@ import TopDeals from '../components/Hotel/TopDeals'
 
 
 const Home = () => {
+
+  useEffect(()=>{
+      window.scrollTo({top:0, behavior:"smooth"})
+    },[])
+  
   return (
     <>
     <Hero/>

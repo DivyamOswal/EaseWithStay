@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../Tilte'
+import Title from '../Title'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import travelHelpers from '../../assets/Home/travelHelper/travelHelper'

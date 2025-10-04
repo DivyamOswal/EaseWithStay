@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Hostels = () => {
+
+  useEffect(()=>{
+      window.scrollTo({top:0, behavior:"smooth"})
+    },[])
+  
   return (
     <div>
       

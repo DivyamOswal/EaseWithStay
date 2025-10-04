@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../Tilte";
+import Title from "../Title";
 import summerGathways from "../../assets/Home/summerGathway/summerGathway";
 
 const SummerGathway = () => {

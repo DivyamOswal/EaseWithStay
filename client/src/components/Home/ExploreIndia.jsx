@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../Tilte";
+import Title from "../Title";
 import cities from "../../assets/Home/explore/exploreIndia";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,6 +32,7 @@ const ExploreIndia = () => {
         >
           {cities.map((city, index) => (
             <SwiperSlide key={index}>
+             
               <div className="w-full h-full flex flex-col justify-center rounded-xl   transition-shadow duration-300">
                 
                 {/* Top Section (Image) */}

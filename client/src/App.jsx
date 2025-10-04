@@ -10,6 +10,8 @@ import Hostels from "./pages/Hostels";
 import Bungalows from "./pages/Bungalows";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
+import HotelDetail from "./components/Hotel/HotelDetailPage";
+ 
 
 const App = () => {
   const location = useLocation();
@@ -21,8 +23,6 @@ const App = () => {
     <div>
       {/* Navbar */}
       {!hideNavbar && <Navbar />}
-
-      {/* Page content (shifted down if Navbar is visible) */}
       <div className={!hideNavbar ? "pt-13 sm:pt-20 md:pt-16" : ""}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,6 +33,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/hotel/:id" element={<HotelDetail />} />
+
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
       </div>
