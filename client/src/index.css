@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
 
 @import "tailwindcss";
 
-*{
-    font-family: 'Winky Sans', sans-serif;
+* {
+  font-family: "Winky Sans", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
 }
-html, body {
+html,
+body {
   overflow-x: hidden;
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar */
@@ -28,8 +31,3 @@ html, body {
   background-color: #555;
 }
 
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #888 transparent; 
-}

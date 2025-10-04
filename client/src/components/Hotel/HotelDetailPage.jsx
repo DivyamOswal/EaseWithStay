@@ -1,74 +1,83 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import topDeals from "../../assets/Hotel/Top Deals/Top Deals";
+import weekendGathaways from "../../assets/Hotel/Weekend Gathaways/weekendGathaways";
 
 const HotelDetail = () => {
   const { id } = useParams();
-  const hotel = topDeals.find((item) => item.id.toString() === id);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const source = location.state?.source;
+  const data = source === "weekend" ? weekendGathaways : topDeals;
+
+  const hotel = data.find((item) => String(item.id) === String(id));
 
   useEffect(()=>{
-    window.scrollTo({top:0, behavior:"smooth"})
-  },[])
+        window.scrollTo({top:0, behavior:"smooth"})
+      },[])
 
-  if (!hotel) {
-    return <h2 className="text-center text-red-500 mt-10">Hotel not found</h2>;
-  }
+  if (!hotel)
+    return (
+      <h2 className="text-center text-gray-600 mt-20 text-lg font-medium">
+        Hotel not found
+      </h2>
+    );
 
-  
+  const handleBack = () => {
+    if (window.history.length > 2) navigate(-1);
+    else navigate("/");
+  };
 
   return (
-    <div className="max-w-[1200px] mx-auto p-6">
-      {/* Back link */}
-      <Link to="/hotels" className="text-black hover:underline text-sm">
-        ← Back to Top Hotel Page
-      </Link>
-
-      {/* Grid Layout */}
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white shadow rounded-lg p-6">
-        {/* Left - Hotel Image */}
-        <div>
+    <div className="min-h-[80vh] bg-[#F3F4F6] py-10 px-6 flex justify-center">
+      <div className="bg-white rounded-xl shadow-md max-w-[1100px] w-full p-6 md:p-10">
+        <button
+          onClick={handleBack}
+          className="text-black text-sm mb-4 hover:underline"
+        >
+          ← Back to{" "}
+          {source === "weekend" ? "Weekend Getaways" : "Top Hotel Page"}
+        </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <img
             src={hotel.image}
             alt={hotel.name}
-            className="w-full  h-250px md:h-[350px] object-cover rounded-lg"
+            className="w-full h-[300px] md:h-[350px] object-cover rounded-lg"
           />
-        </div>
+          <div className="flex flex-col justify-between">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+                {hotel.name}
+              </h1>
+              <p className="text-gray-600">{hotel.city}</p>
 
-        {/* Right - Hotel Details */}
-        <div className="flex flex-col justify-between">
-          <div>
-            <h1 className="text-3xl font-bold mb-2">{hotel.name}</h1>
-            <p className="text-lg text-gray-600">{hotel.city}</p>
+              <div className="flex items-center mt-3 text-sm">
+                <span className="bg-[#0056B3] text-white px-2 py-1 rounded-md text-sm font-semibold">
+                  ⭐ {hotel.rating}
+                </span>
+                <span className="ml-3 text-gray-600">
+                  {hotel.reviews} reviews
+                </span>
+              </div>
 
-            <div className="mt-2 flex items-center">
-              <p className="text-sm bg-[#0361C5] text-white px-3 py-1 rounded-md">
-                ⭐ {hotel.rating}
+              <p className="mt-3 text-gray-600 text-sm">
+                Duration: {hotel.nights} nights stay
               </p>
-              <p className="ml-3 text-gray-700 text-sm">
-                {hotel.reviews} reviews
+              <div className="flex items-center gap-3 mt-2">
+                <p className="text-red-500 line-through">₹{hotel.oldPrice}</p>
+                <p className="text-xl font-bold">₹{hotel.newPrice}</p>
+              </div>
+
+              <p className="mt-4 text-gray-700 text-sm leading-relaxed">
+                {hotel.description ||
+                  "An icon of grandeur, offering world-class comfort, award-winning dining, and a luxurious spa experience."}
               </p>
             </div>
-
-            <p className="mt-3 text-sm text-gray-700">
-              Duration: <span className="font-semibold">{hotel.nights}</span>{" "}
-              nights stay
-            </p>
-
-            <div className="mt-4 flex gap-6">
-              <p className="line-through text-red-500 text-sm">
-                ₹{hotel.oldPrice}
-              </p>
-              <p className="text-xl font-bold text-black">
-                ₹{hotel.newPrice}
-              </p>
-            </div>
-            <p className="mt-2">{hotel.description}</p>
+            <button className="mt-6 bg-[#0056B3] hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition">
+              Book Now
+            </button>
           </div>
-
-          {/* CTA Button */}
-          <button className="mt-6 w-full md:w-auto bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-            Book Now
-          </button>
         </div>
       </div>
     </div>
