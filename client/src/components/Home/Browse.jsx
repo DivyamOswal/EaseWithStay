@@ -2,7 +2,7 @@ import React from "react";
 import Title from "../Tilte";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import propertyTypes from "../../assets/browse/browse";
+import propertyTypes from "../../assets/Home/browse/browse";
 
 const Browse = () => {
   return (

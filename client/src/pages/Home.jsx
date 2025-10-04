@@ -9,6 +9,7 @@ import SummerGathway from '../components/Home/SummerGathway'
 import SaveMoney from '../components/Home/SaveMoney'
 import BottomAnimation from '../components/Home/BottomAnimation'
 import TopChoices from '../components/Home/TopChoices'
+import TopDeals from '../components/Hotel/TopDeals'
 
 
 const Home = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Tilte";
-import cities from "../../assets/explore/exploreIndia";
+import cities from "../../assets/Home/explore/exploreIndia";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";

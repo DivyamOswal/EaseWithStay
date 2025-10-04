@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Tilte";
-import summerGathways from "../../assets/summerGathway/summerGathway";
+import summerGathways from "../../assets/Home/summerGathway/summerGathway";
 
 const SummerGathway = () => {
   return (

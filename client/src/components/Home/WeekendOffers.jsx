@@ -2,7 +2,7 @@ import React from 'react'
 import Title from '../Tilte'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
-import weekendOffers from '../../assets/weekendOffers/weekendOffer'
+import weekendOffers from '../../assets/Home/weekendOffers/weekendOffer'
 
 const WeekendOffers = () => {
   return (

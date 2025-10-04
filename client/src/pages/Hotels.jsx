@@ -1,9 +1,12 @@
 import React from 'react'
+import Welcome from '../components/Hotel/Welcome'
+import TopDeals from '../components/Hotel/TopDeals'
 
 const Hotels = () => {
   return (
     <div>
-      <h1>Heloo</h1>
+      <Welcome/>
+      <TopDeals/>
     </div>
   )
 }

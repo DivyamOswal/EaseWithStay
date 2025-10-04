@@ -99,7 +99,7 @@ const Footer = () => {
         <img
           src={companyLogo.image}
           alt={companyLogo.name || `company-logo-${index}`}
-          className="h-4 sm:h-5 md:h-6 cursor-pointer hover:opacity-70 transition"
+          className="h-4 sm:h-5 md:h-6 w-20 cursor-pointer hover:opacity-70 transition object-contain"
         />
       </a>
     ))}

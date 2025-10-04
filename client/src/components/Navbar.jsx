@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navLinks = [
-    { name: "Hotel", path: "/hotels" },
+    { name: "Hotels", path: "/hotels" },
     { name: "Villas", path: "/villas" },
     { name: "Bungalows", path: "/bungalows" },
     { name: "Hostels", path: "/hostels" },

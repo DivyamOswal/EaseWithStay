@@ -4,7 +4,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import offers from "../../assets/offers/offers.js";
+import offers from "../../assets/Home/offers/offers.js";
 import Title from "../Tilte.jsx";
 
 const Offers = () => {

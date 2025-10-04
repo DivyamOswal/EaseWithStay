@@ -2,7 +2,7 @@ import React from 'react'
 import Title from '../Tilte'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
-import travelHelpers from '../../assets/travelHelper/travelHelper'
+import travelHelpers from '../../assets/Home/travelHelper/travelHelper'
 
 const TravelHelper = () => {
   return (
