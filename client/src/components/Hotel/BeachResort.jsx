@@ -1,15 +1,17 @@
 import React from "react";
-import { Autoplay, Navigation } from "swiper/modules";
-import { SwiperSlide, Swiper } from "swiper/react";
-import topDeals from "../../assets/Hotel/Top Deals/Top Deals";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
+
 import Title from "../Title";
 import { Link } from "react-router-dom";
+import beachResorts from "../../assets/Hotel/Beach Resort/beachResort";
 
-const TopDeals = () => {
+const BeachResort = () => {
   return (
     <div className="bg-[#E6E6E6] px-6 py-4">
       <div className="max-w-[1200px] w-full mx-auto overflow-hidden">
-        <Title title="Top Deals" />
+        <Title title="Beach Resorts & Sea View Rooms" />
         <Swiper
           modules={[Navigation, Autoplay]}
           spaceBetween={11}
@@ -21,42 +23,47 @@ const TopDeals = () => {
             1024: { slidesPerView: 5 }, // desktop
           }}
         >
-          {topDeals.map((topDeal) => (
-            <SwiperSlide key={topDeal.id} className="pt-4">
-              {/* ✅ Added state property here */}
-              <Link to={`/hotel/${topDeal.id}`} state={{ source: "topDeals" }}>
+          {beachResorts.map((beachResort) => (
+            <SwiperSlide key={beachResort.id} className="pt-4">
+              {/* Link (navigate to the hotel details page) */}
+              <Link
+                to={`/hotel/${beachResort.id}`}
+                state={{ source: "beachResorts" }} // ✅ pass category name
+              >
                 <div className="rounded-lg shadow hover:shadow-lg transition bg-white">
                   <div>
                     <img
-                      src={topDeal.image}
-                      alt={topDeal.name}
+                      src={beachResort.image}
+                      alt={beachResort.name}
                       className="w-full h-32 object-cover rounded-t-lg"
                     />
                   </div>
                   <div className="p-3">
                     <span className="text-[10px] bg-[#A6A9A9] px-2 py-1 rounded inline-block">
-                      {topDeal.tag}
+                      {beachResort.tag}
                     </span>
                     <h2 className="font-semibold text-sm mt-2">
-                      {topDeal.name}
+                      {beachResort.name}
                     </h2>
-                    <p className="text-sm text-gray-600">{topDeal.location}</p>
+                    <p className="text-sm text-gray-600">
+                      {beachResort.location}
+                    </p>
                     <div className="flex text-center">
                       <p className="text-xs mt-1 px-2 py-1 bg-[#0361C5] rounded-md text-white">
-                        ⭐ {topDeal.rating}
+                        ⭐ {beachResort.rating}
                       </p>
                       <p className="text-sm mt-1 ml-2 pl-2 text-black/80">
-                        Good · {topDeal.reviews} reviews
+                        Good · {beachResort.reviews} reviews
                       </p>
                     </div>
                     <div className="flex justify-between mt-2">
-                      <p className="text-xs">{topDeal.nights} nights</p>
+                      <p className="text-xs">{beachResort.nights} nights</p>
                       <div className="flex gap-2">
                         <p className="text-xs line-through text-red-500">
-                          ₹{topDeal.oldPrice}
+                          ₹{beachResort.oldPrice}
                         </p>
                         <p className="text-sm font-bold text-black">
-                          ₹{topDeal.newPrice}
+                          ₹{beachResort.newPrice}
                         </p>
                       </div>
                     </div>
@@ -71,4 +78,4 @@ const TopDeals = () => {
   );
 };
 
-export default TopDeals;
+export default BeachResort;

@@ -10,7 +10,7 @@ const weekendGathaways = [
   {
     id: 1,
     name: "Aloha On The Ganges",
-    city: "Uttarakhand, India",
+    location: "Uttarakhand, India",
     image: alohaOnGangasImg,
     rating: 9.0,
     reviews: "2,300+",
@@ -24,7 +24,7 @@ const weekendGathaways = [
   {
     id: 2,
     name: "Fazlani Natures Nest",
-    city: "Lonavala, Maharashtra",
+    location: "Lonavala, Maharashtra",
     image: fazlaniNaturesImg,
     rating: 8.6,
     reviews: "850+",
@@ -38,7 +38,7 @@ const weekendGathaways = [
   {
     id: 3,
     name: "The Khyber Himalayan Resort",
-    city: "Gulmarg, Kashmir",
+    location: "Gulmarg, Kashmir",
     image: khyberImg,
     rating: 9.2,
     reviews: "2,100+",
@@ -52,7 +52,7 @@ const weekendGathaways = [
   {
     id: 4,
     name: "Neemrana Fort Palace",
-    city: "Uttarakhand, India",
+    location: "Uttarakhand, India",
     image: meemranaImg,
     rating: 8.2,
     reviews: "3,200+",
@@ -66,7 +66,7 @@ const weekendGathaways = [
   {
     id: 5,
     name: "Radisson Blu Resort Temple Bay",
-    city: "Mahabalipuram, Tamil Nadu",
+    location: "Mahabalipuram, Tamil Nadu",
     image: redissionImg,
     rating: 8.6,
     reviews: "3,000+",
@@ -80,7 +80,7 @@ const weekendGathaways = [
   {
     id: 6,
     name: "Sterling Ooty Elk Hill",
-    city: "Ooty, Tamil Nadu",
+    location: "Ooty, Tamil Nadu",
     image: steeringIm,
     rating: 8.4,
     reviews: "2500+",
@@ -94,7 +94,7 @@ const weekendGathaways = [
   {
     id: 7,
     name: "Vythiri Resort",
-    city: "Wayanad, Kerala",
+    location: "Wayanad, Kerala",
     image: vynthiriImg,
     rating: 8.8,
     reviews: "1,900+",

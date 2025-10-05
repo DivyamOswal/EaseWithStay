@@ -11,7 +11,7 @@ export const topDeals = [
   {
     id: 1,
     name: "Taj Lands",
-    city: "Mumbai, India",
+    location: "Mumbai, India",
     tag: "Top-rated",
     rating: 7.5,
     reviews: 911,
@@ -25,7 +25,7 @@ export const topDeals = [
   {
     id: 2,
     name: "The Leela Palace",
-    city: "Delhi, India",
+    location: "Delhi, India",
     tag: "Recommended",
     rating: 8.5,
     reviews: 247,
@@ -39,7 +39,7 @@ export const topDeals = [
   {
     id: 3,
     name: "Amanbagh",
-    city: "Alwar, India",
+    location: "Alwar, India",
     tag: "Top-rated",
     rating: 8.9,
     reviews: 300,
@@ -53,7 +53,7 @@ export const topDeals = [
   {
     id: 4,
     name: "Ananda in the Himalayas",
-    city: "Uttarakhand, India",
+    location: "Uttarakhand, India",
     tag: "Recommended",
     rating: 8.7,
     reviews: 500,
@@ -67,7 +67,7 @@ export const topDeals = [
   {
     id: 5,
     name: "The Oberoi Amarvilas",
-    city: "Agra, India",
+    location: "Agra, India",
     tag: "Top-rated",
     rating: 8.2,
     reviews: 138,
@@ -81,7 +81,7 @@ export const topDeals = [
   {
     id: 6,
     name: "Raffles",
-    city: "Jaipur, India",
+    location: "Jaipur, India",
     tag: "Recommended",
     rating: 7.2,
     reviews: 200,
@@ -90,12 +90,12 @@ export const topDeals = [
     newPrice: "15,750",
     image: rafflesImg,
     description:
-      "Set in the Pink City, Raffles Jaipur blends timeless elegance with contemporary luxury. Guests can relax in palatial suites, savor royal Rajasthani cuisine, and enjoy a calm oasis away from the city buzz.",
+      "Set in the Pink location, Raffles Jaipur blends timeless elegance with contemporary luxury. Guests can relax in palatial suites, savor royal Rajasthani cuisine, and enjoy a calm oasis away from the location buzz.",
   },
   {
     id: 7,
     name: "Taj Mahal Palace",
-    city: "Mumbai, India",
+    location: "Mumbai, India",
     tag: "Top-rated",
     rating: 8.8,
     reviews: 5300,

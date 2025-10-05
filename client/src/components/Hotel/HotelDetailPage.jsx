@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import topDeals from "../../assets/Hotel/Top Deals/Top Deals";
 import weekendGathaways from "../../assets/Hotel/Weekend Gathaways/weekendGathaways";
+import beachResorts from "../../assets/Hotel/Beach Resort/beachResort";
+import familyStays from "../../assets/Hotel/Family Stays/familyStays";
 
 const HotelDetail = () => {
   const { id } = useParams();
@@ -9,13 +11,22 @@ const HotelDetail = () => {
   const navigate = useNavigate();
 
   const source = location.state?.source;
-  const data = source === "weekend" ? weekendGathaways : topDeals;
+  const data =
+    source === "weekend"
+      ? weekendGathaways
+      : source === "topDeals"
+      ? topDeals
+      : source === "beachResorts"
+      ? beachResorts
+      : source === "familyStays"
+      ? familyStays
+      : null;
 
   const hotel = data.find((item) => String(item.id) === String(id));
 
-  useEffect(()=>{
-        window.scrollTo({top:0, behavior:"smooth"})
-      },[])
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (!hotel)
     return (
@@ -34,7 +45,7 @@ const HotelDetail = () => {
       <div className="bg-white rounded-xl shadow-md max-w-[1100px] w-full p-6 md:p-10">
         <button
           onClick={handleBack}
-          className="text-black text-sm mb-4 hover:underline"
+          className="text-black text-sm mb-4 hover:bg-[#0361C5]/30 p-2 rounded-xl hover:underline transition-all duration-100"
         >
           ← Back to{" "}
           {source === "weekend" ? "Weekend Getaways" : "Top Hotel Page"}
@@ -50,7 +61,7 @@ const HotelDetail = () => {
               <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
                 {hotel.name}
               </h1>
-              <p className="text-gray-600">{hotel.city}</p>
+              <p className="text-gray-600">{hotel.location}</p>
 
               <div className="flex items-center mt-3 text-sm">
                 <span className="bg-[#0056B3] text-white px-2 py-1 rounded-md text-sm font-semibold">

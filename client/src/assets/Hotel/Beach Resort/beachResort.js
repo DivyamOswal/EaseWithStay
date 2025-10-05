@@ -1,97 +1,110 @@
-// Import images
-import tajLandsImg from "./Taj_lands_end.jpg";
-import leelaPalaceImg from "./the_leela_palace.jpg";
-import amanbaghImg from "./amanbagh.jpg";
-import anandaImg from "./ananda_himalayas.jpg";
-import oberoiImg from "./oberoi_amarvillas.jpg";
-import rafflesImg from "./raffles_hotels.jpg";
-import tajPalaceImg from "./taj_palace.jpg";
+import azureWave from "./azure-wave.png";
+import coralBay from "./coral-bay.jpg";
+import oceanPearl from "./ocean-pearl.jpg";
+import palmBreeze from "./palm-breeze.jpg";
+import theBayLuxe from "./the-bay-luxe.jpg";
+import seashellGrande from "./seashell-grande.jpg";
+import blueHorizon from "./blue-horizon.jpg";
 
-export const topDeals = [
+const beachResorts = [
   {
     id: 1,
-    name: "Taj Lands",
-    city: "Mumbai, India",
+    image: azureWave,
     tag: "Top-rated",
-    rating: 7.5,
-    reviews: 911,
+    name: "Azure Wave Resort",
+    location: "Goa, India",
+    rating: 9.2,
+    reviews: 725,
     nights: 2,
-    oldPrice: "21,000",
-    newPrice: "15,750",
-    image: tajLandsImg,
+    oldPrice: "18,000",
+    newPrice: "14,500",
+    description:
+      "Perched along Goa’s golden coastline, Azure Wave Resort offers breathtaking infinity pool views and luxurious sea-facing suites for an unforgettable escape.",
   },
   {
     id: 2,
-    name: "The Leela Palace",
-    city: "Delhi, India",
+    image: coralBay,
     tag: "Recommended",
-    rating: 8.5,
-    reviews: 247,
+    name: "Coral Bay Retreat",
+    location: "Kovalam, Kerala",
+    rating: 8.8,
+    reviews: 657,
     nights: 2,
-    oldPrice: "26,000",
-    newPrice: "21,650",
-    image: leelaPalaceImg,
+    oldPrice: "15,500",
+    newPrice: "12,999",
+    description:
+      "A serene getaway in the heart of Kovalam, Coral Bay Retreat blends traditional Kerala architecture with modern comfort, surrounded by lush palm gardens.",
   },
   {
     id: 3,
-    name: "Amanbagh",
-    city: "Alwar, India",
+    image: oceanPearl,
     tag: "Top-rated",
-    rating: 8.9,
-    reviews: 300,
+    name: "Ocean Pearl Villas",
+    location: "Pondicherry, India",
+    rating: 9.4,
+    reviews: 634,
     nights: 3,
-    oldPrice: "15,5000",
-    newPrice: "12,5000",
-    image: amanbaghImg,
+    oldPrice: "18,000",
+    newPrice: "16,900",
+    description:
+      "An elegant beachfront villa experience in Pondicherry with private pools, gourmet dining, and cozy coastal vibes for families and couples alike.",
   },
   {
     id: 4,
-    name: "Ananda in the Himalayas",
-    city: "Uttarakhand, India",
+    image: palmBreeze,
     tag: "Recommended",
-    rating: 8.7,
-    reviews: 500,
-    nights: 2,
-    oldPrice: "21,000",
-    newPrice: "15,750",
-    image: anandaImg,
+    name: "Palm Breeze Resort",
+    location: "Varkala, Kerala",
+    rating: 8.6,
+    reviews: 275,
+    nights: 1,
+    oldPrice: "14,000",
+    newPrice: "11,500",
+    description:
+      "Set near Varkala’s stunning cliffs, Palm Breeze Resort offers an idyllic retreat with Ayurvedic spa sessions and panoramic ocean sunsets.",
   },
   {
     id: 5,
-    name: "The Oberoi Amarvilas",
-    city: "Agra, India",
+    image: theBayLuxe,
     tag: "Top-rated",
-    rating: 8.2,
-    reviews: 138,
+    name: "The Bay Luxe",
+    location: "Alibaug, Maharashtra",
+    rating: 9.0,
+    reviews: 398,
     nights: 2,
-    oldPrice: "36,000",
-    newPrice: "30,499",
-    image: oberoiImg,
+    oldPrice: "17,000",
+    newPrice: "13,900",
+    description:
+      "A chic beachfront camp resort under the stars in Alibaug featuring cozy glamping tents, string lights, and a laid-back coastal charm.",
   },
   {
     id: 6,
-    name: "Raffles",
-    city: "Jaipur, India",
-    tag: "Recommended",
-    rating: 7.2,
-    reviews: 200,
+    image: seashellGrande,
+    tag: "Top-rated",
+    name: "SeaShell Grande",
+    location: "Havelock Island, Andaman, India",
+    rating: 9.6,
+    reviews: 602,
     nights: 2,
-    oldPrice: "21,000",
-    newPrice: "15,750",
-    image: rafflesImg,
+    oldPrice: "22,000",
+    newPrice: "18,500",
+    description:
+      "Nestled in the Andamans, SeaShell Grande offers tropical luxury cabins with private balconies and crystal-clear turquoise beach access.",
   },
   {
     id: 7,
-    name: "Taj Mahal Palace",
-    city: "Mumbai, India",
+    image: blueHorizon,
     tag: "Top-rated",
-    rating: 8.8,
-    reviews: 5300,
+    name: "Blue Horizon Beach Stay",
+    location: "Gokarna, Karnataka",
+    rating: 8.4,
+    reviews: 241,
     nights: 2,
-    oldPrice: "32,000",
-    newPrice: "26,800",
-    image: tajPalaceImg,
+    oldPrice: "13,000",
+    newPrice: "10,700",
+    description:
+      "Located on the serene Gokarna coastline, Blue Horizon Beach Stay is perfect for those seeking tranquility, ocean views, and fresh coastal cuisine.",
   },
 ];
 
-export default topDeals
+export default beachResorts;

@@ -17,14 +17,14 @@ const WeekendGathaways = () => {
           slidesPerView={1}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           breakpoints={{
-            640: { slidesPerView: 1 }, // mobile
-            768: { slidesPerView: 2 }, // tablet
-            1024: { slidesPerView: 5 }, // desktop
+            640: { slidesPerView: 1 }, 
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 5 }, 
           }}
         >
           {weekendGathaways.map((deal) => (
             <SwiperSlide key={deal.id} className="pt-4">
-              {/* ✅ Navigate to same hotel detail route */}
+            
               <Link to={`/hotel/${deal.id}`} state={{ source: "weekend" }}>
                 <div className="rounded-lg shadow hover:shadow-lg transition bg-white">
                   <div>
@@ -39,7 +39,7 @@ const WeekendGathaways = () => {
                       {deal.tag}
                     </span>
                     <h2 className="font-semibold text-sm mt-2">{deal.name}</h2>
-                    <p className="text-sm text-gray-600">{deal.city}</p>
+                    <p className="text-sm text-gray-600">{deal.location}</p>
 
                     <div className="flex text-center items-center">
                       <p className="text-xs mt-1 px-2 py-1 bg-[#0361C5] rounded-md text-white">
