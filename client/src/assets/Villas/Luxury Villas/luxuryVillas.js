@@ -4,7 +4,7 @@ import amaraVilla from "./amara_villa.jpg";
 import naverlandFarms from "./naverland_farms.jpg";
 import theJunglow from "./the_junglow.avif";
 import villaBranco from "./villa_branco.webp";
-import eliviasGoa from "./elivias_goa.webp";
+import eliviasGoa from "./eliivas_goa.webp";
 
 const luxuryVillas = [
   {

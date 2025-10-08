@@ -12,6 +12,10 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import HotelDetail from "./components/Hotel/HotelDetailPage";
 import topDeals from "./assets/Hotel/Top Deals/Top Deals";
+import VillaDetailsPage from "./components/Villa/VillaDetailsPage";
+import luxuryVillas from "./assets/Villas/Luxury Villas/luxuryVillas";
+import BungalowsDetailsPage from "./components/Bungalows/BungalowsDetailsPage";
+import familyFriendly from "./assets/Bungalows/Family Friendly/familyFriendly";
 
 const App = () => {
   const location = useLocation();
@@ -38,6 +42,14 @@ const App = () => {
             path="/hotel/:id"
             element={<HotelDetail data={topDeals} backLink="/hotels" />}
           />
+          <Route
+            path="/villas/:id"
+            element={<VillaDetailsPage data={luxuryVillas} backLink="/villas" />}
+          />
+          <Route
+            path="/bungalows/:id"
+            element={<BungalowsDetailsPage data={familyFriendly} backLink="/bungalows" />}
+            />
           {/* For page not found */}
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
