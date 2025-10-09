@@ -14,7 +14,7 @@ const ExploreIndia = () => {
       <div className="max-w-[1200px] w-full mx-auto overflow-hidden">
         <Title
           title="Explore India !"
-          subtitle='"These must-visit destinations offer endless experiences."'
+          subtitle='These must-visit destinations offer endless experiences.'
         />
 
         {/* Swiper */}
