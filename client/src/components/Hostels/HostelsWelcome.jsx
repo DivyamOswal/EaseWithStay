@@ -1,6 +1,6 @@
 import React from "react";
 
-const Welcome = () => {
+const HostelsWelcome = () => {
   return (
     <div className="bg-[#E6E6E6] px-6 sm:px-8 md:py-8">
       <div className="max-w-[1200px] w-full mx-auto overflow-hidden">
@@ -9,21 +9,23 @@ const Welcome = () => {
           Welcome to EaseWithStay.com
         </h3>
         <p className="font-medium text-sm md:text-base leading-relaxed mt-2 text-gray-700">
-          Your perfect stay is just a click away. Explore handpicked hotels,
-          enjoy seamless booking, and experience comfort like never before.
+          Discover vibrant stays handpicked for backpackers and explorers where
+          comfort meets community.
           <br />
-          Whether it's a weekend getaway, a business trip, or a dream vacation 
-          we've got the perfect place for you.
+          Whether it’s a solo backpacking trip, a spontaneous getaway, or a
+          budget adventure with friends we’ve got the perfect hostel waiting for
+          you.
         </p>
+
         {/* Filter Buttons */}
-        <div className="pt-4 flex flex-wrap gap-3 sm:gap-4 font-semibold text-[12px] sm:text-[12px] md:text-base sm:text-base  ">
+        <div className="pt-4 flex flex-wrap gap-3 sm:gap-3 font-semibold text-[12px] sm:text-[12px] md:text-base sm:text-base  ">
           {[
-            "Book Now",
-            "Find Hotels",
-            "Hotel Deals",
-            "Explore Stays",
-            "Rooms",
-            "Quick Book",
+            "Book Your Bed",
+            "Discover Hostels",
+            "Traveler Offers",
+            "Explore Destinations",
+            "Social Stays",
+            "Book Instantly",
           ].map((item, idx) => (
             <button
               key={idx}
@@ -43,4 +45,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default HostelsWelcome;

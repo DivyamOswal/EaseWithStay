@@ -12,7 +12,7 @@ const VillaWelcome = () => {
           Your perfect stay is just a click away. Explore handpicked villas,
           enjoy seamless booking, and experience comfort like never before.
           <br />
-          Whether it's a weekend getaway, a business trip, or a dream vacation —
+          Whether it's a weekend getaway, a business trip, or a dream vacation 
           we've got the perfect place for you.
         </p>
         {/* Filter Buttons */}

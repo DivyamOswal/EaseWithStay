@@ -9,7 +9,7 @@ const BunglowsWelcome = () => {
           Welcome to EaseWithStay.com
         </h3>
         <p className="font-medium text-sm md:text-base leading-relaxed mt-2 text-gray-700">
-          Escape to tranquility with our handpicked bungalows — where comfort
+          Escape to tranquility with our handpicked bungalows where comfort
           meets nature. Enjoy seamless booking and stays designed for
           relaxation, togetherness, and peace of mind.
           <br />
