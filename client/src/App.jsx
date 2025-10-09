@@ -1,27 +1,26 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Hotels from "./pages/Hotels";
-import Villas from "./pages/Villas";
-import Bungalows from "./pages/Bungalows";
-import Hostels from "./pages/Hostels";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Login from "./pages/Login";
-import HotelDetail from "./components/Hotel/HotelDetailPage";
-import topDeals from "./assets/Hotel/Top Deals/Top Deals";
-import VillaDetailsPage from "./components/Villa/VillaDetailsPage";
-import luxuryVillas from "./assets/Villas/Luxury Villas/luxuryVillas";
-import BungalowsDetailsPage from "./components/Bungalows/BungalowsDetailsPage";
-import familyFriendly from "./assets/Bungalows/Family Friendly/familyFriendly";
-import HostelsDetailsPage from "./components/Hostels/HostelsDetailsPage";
-import budgetFriendlys from "./assets/Hostels/Budget Friendly/budgetFriendly";
+
+// Lazy load pages
+const Home = lazy(() => import("./pages/Home"));
+const Hotels = lazy(() => import("./pages/Hotels"));
+const Villas = lazy(() => import("./pages/Villas"));
+const Bungalows = lazy(() => import("./pages/Bungalows"));
+const Hostels = lazy(() => import("./pages/Hostels"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Login = lazy(() => import("./pages/Login"));
+
+// Lazy load detail pages
+const HotelDetail = lazy(() => import("./components/Hotel/HotelDetailPage"));
+const VillaDetailsPage = lazy(() => import("./components/Villa/VillaDetailsPage"));
+const BungalowsDetailsPage = lazy(() => import("./components/Bungalows/BungalowsDetailsPage"));
+const HostelsDetailsPage = lazy(() => import("./components/Hostels/HostelsDetailsPage"));
 
 const App = () => {
   const location = useLocation();
-
   const hideNavbar = location.pathname === "/login";
   const hideFooter = location.pathname === "/login";
 
@@ -30,40 +29,48 @@ const App = () => {
       {!hideNavbar && <Navbar />}
 
       <div className={!hideNavbar ? "pt-13 sm:pt-20 md:pt-16" : ""}>
-        <Routes>
-          {/*  Home Pages */}
-          <Route path="/" element={<Home />} />
-          <Route path="/hotels" element={<Hotels />} />
-          <Route path="/villas" element={<Villas />} />
-          <Route path="/bungalows" element={<Bungalows />} />
-          <Route path="/hostels" element={<Hostels />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          {/* for hotels details page */}
-          <Route
-            path="/hotel/:id"
-            element={<HotelDetail data={topDeals} backLink="/hotels" />}
-          />
-          {/* for villas detail page */}
-          <Route
-            path="/villas/:id"
-            element={<VillaDetailsPage data={luxuryVillas} backLink="/villas" />}
-          />
-          {/* for bunglow details page */}
-          <Route
-            path="/bungalows/:id"
-            element={<BungalowsDetailsPage data={familyFriendly} backLink="/bungalows" />}
+        <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+          <Routes>
+            {/* Home Pages */}
+            <Route path="/" element={<Home />} />
+            <Route path="/hotels" element={<Hotels />} />
+            <Route path="/villas" element={<Villas />} />
+            <Route path="/bungalows" element={<Bungalows />} />
+            <Route path="/hostels" element={<Hostels />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+
+            {/* Detail Pages with Dynamic Data Import */}
+            <Route
+              path="/hotel/:id"
+              element={
+                <HotelDetailLoader backLink="/hotels" />
+              }
             />
-          {/* for hostels detail page */}
-          <Route
-            path="/hostels/:id"
-            element={<HostelsDetailsPage data={budgetFriendlys} backLink="/hostels" />}
+            <Route
+              path="/villas/:id"
+              element={
+                <VillaDetailsLoader backLink="/villas" />
+              }
+            />
+            <Route
+              path="/bungalows/:id"
+              element={
+                <BungalowsDetailsLoader backLink="/bungalows" />
+              }
+            />
+            <Route
+              path="/hostels/:id"
+              element={
+                <HostelsDetailsLoader backLink="/hostels" />
+              }
             />
 
-          {/* For page not found */}
-          <Route path="*" element={<h1>404 - Page Not Found</h1>} />
-        </Routes>
+            {/* 404 Page */}
+            <Route path="*" element={<h1 className="text-center py-20">404 - Page Not Found</h1>} />
+          </Routes>
+        </Suspense>
       </div>
 
       {!hideFooter && <Footer />}
@@ -72,3 +79,59 @@ const App = () => {
 };
 
 export default App;
+
+/* ------------------- Dynamic Data Loaders ------------------- */
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+// Hotel Detail Loader
+const HotelDetailLoader = ({ backLink }) => {
+  const [data, setData] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    import("./assets/Hotel/Top Deals/Top Deals").then((module) => setData(module.default));
+  }, []);
+
+  if (!data) return <div className="text-center py-20">Loading hotel details...</div>;
+  return <HotelDetail data={data} backLink={backLink} />;
+};
+
+// Villa Detail Loader
+const VillaDetailsLoader = ({ backLink }) => {
+  const [data, setData] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    import("./assets/Villas/Luxury Villas/luxuryVillas").then((module) => setData(module.default));
+  }, []);
+
+  if (!data) return <div className="text-center py-20">Loading villa details...</div>;
+  return <VillaDetailsPage data={data} backLink={backLink} />;
+};
+
+// Bungalows Detail Loader
+const BungalowsDetailsLoader = ({ backLink }) => {
+  const [data, setData] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    import("./assets/Bungalows/Family Friendly/familyFriendly").then((module) => setData(module.default));
+  }, []);
+
+  if (!data) return <div className="text-center py-20">Loading bungalow details...</div>;
+  return <BungalowsDetailsPage data={data} backLink={backLink} />;
+};
+
+// Hostels Detail Loader
+const HostelsDetailsLoader = ({ backLink }) => {
+  const [data, setData] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    import("./assets/Hostels/Budget Friendly/budgetFriendly").then((module) => setData(module.default));
+  }, []);
+
+  if (!data) return <div className="text-center py-20">Loading hostel details...</div>;
+  return <HostelsDetailsPage data={data} backLink={backLink} />;
+};
