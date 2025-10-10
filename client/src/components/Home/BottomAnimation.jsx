@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import botomAnimation from "../../assets/bottomAnimation.png"
 
 const BottomAnimation = () => {
 
@@ -32,7 +33,7 @@ const BottomAnimation = () => {
           {/* Right Content (Image) */}
           <div className="flex-shrink-0 relative z-0">
             <img
-              src="/src/assets/bottomAnimation.png"
+              src={botomAnimation}
               alt="Genius Program"
               className="h-32 w-32 md:h-40 md:w-40 object-contain"
             />

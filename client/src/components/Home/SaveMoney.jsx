@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../Title";
+import geniusImage from "../../assets/genius.png"
 
 const SaveMoney = () => {
   return (
@@ -35,7 +36,7 @@ const SaveMoney = () => {
           {/* Right Content (Image) */}
           <div className="flex-shrink-0">
             <img
-              src="/src/assets/genius.png"
+              src={geniusImage}
               alt="Genius Program"
               className="h-32 w-32 md:h-40 md:w-40 object-contain"
             />

@@ -8,7 +8,7 @@ import kochiImage from "./kochi.jpg";
 import lehImage from "./leh.jpg";
 import nainitalImage from "./nainital.jpg";
 import ootyImage from "./ooty.jpg";
-import udaipurImage from "./udaipur.jpg";
+import udaipurImage from "./udaipur.webp";
 import varkalaImage from "./varkala.jpg";
 
 export const travelHelpers = [
